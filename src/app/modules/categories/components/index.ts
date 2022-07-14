@@ -1,0 +1,1 @@
+export * from "@apps/modules/categories/components/category-list/category-list.component";
