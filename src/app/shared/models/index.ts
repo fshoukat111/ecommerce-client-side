@@ -1,0 +1,1 @@
+export * from '@apps/shared/models/categories/categories.model';
