@@ -12,30 +12,30 @@ import { Categories } from '@apps/shared/models';
 })
 export class CategoriesComponent implements OnInit {
 
-  subscriptions$:Subscription[];
-  categoryList:Categories[];
+  subscriptions$: Subscription[] = [];
+  public categoryList: Categories[];
 
-  constructor(private categoryStore:Store) { }
+  constructor(private categoryStore: Store) { }
 
   ngOnInit(): void {
     this.dispatchCategoryListAction();
   }
 
-  public dispatchCategoryListAction(){
+  public dispatchCategoryListAction() {
     this.categoryStore.dispatch(LoadCategoryList());
     this.getCategoryList();
   }
 
   /**
- * Get Category List form Admin Store
+ * Get Category List form category Store
  */
-   private getCategoryList(): void {
+  private getCategoryList(): void {
     this.subscriptions$.push(
       this.categoryStore.pipe(select(getCategoryListSelector)).subscribe((categories: Categories[]) => {
         if (categories && categories.length) {
           this.categoryList = categories;
         }
       })
-    )
+    );
   }
 }

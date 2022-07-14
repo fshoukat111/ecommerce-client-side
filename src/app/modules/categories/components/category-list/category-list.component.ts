@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Categories } from '@apps/shared/models';
 
 @Component({
   selector: 'app-category-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-list.component.sass']
 })
 export class CategoryListComponent implements OnInit {
+
+  @Input() categoryList:Categories[]=[];
 
   constructor() { }
 
