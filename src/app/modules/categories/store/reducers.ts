@@ -2,7 +2,7 @@ import { createReducer, on, Action } from '@ngrx/store';
 import * as categoryAction from '@apps/modules/categories/store/actions';
 import { ICategoryState, initialCategoryState } from './state';
 
-const creatAdminSectionReducer = createReducer(initialCategoryState,
+const createCategorySectionReducer = createReducer(initialCategoryState,
 
   //get Category List By Admin Reducers
   on(categoryAction.LoadCategoryList, (state) => ({
@@ -20,6 +20,6 @@ const creatAdminSectionReducer = createReducer(initialCategoryState,
   }))
   
 )
-export function adminSectionReducer(state: ICategoryState  = initialCategoryState, action: Action) {
-    return creatAdminSectionReducer(state, action);
+export function categorySectionReducer(state: ICategoryState  = initialCategoryState, action: Action) {
+    return createCategorySectionReducer(state, action);
   }
