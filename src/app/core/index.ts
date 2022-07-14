@@ -1,0 +1,1 @@
+export * from "@apps/core/core.module";
