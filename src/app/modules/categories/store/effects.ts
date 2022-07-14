@@ -8,7 +8,7 @@ import { Categories } from '@apps/shared/models';
 
 
 @Injectable()
-export class AdminSectionEffects {
+export class CategorySectionEffects {
     constructor(private actions$: Actions,private categoryService: CategoriesService) { }
 
     /**
