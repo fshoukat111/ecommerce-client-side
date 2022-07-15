@@ -4,6 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { LoadCategoryList } from './store/actions';
 import { Subscription } from 'rxjs';
 import { Categories } from '@apps/shared/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -15,7 +16,7 @@ export class CategoriesComponent implements OnInit {
   subscriptions$: Subscription[] = [];
   public categoryList: Categories[];
 
-  constructor(private categoryStore: Store) { }
+  constructor(private categoryStore: Store, private route: Router) { }
 
   ngOnInit(): void {
     this.dispatchCategoryListAction();
@@ -37,5 +38,14 @@ export class CategoriesComponent implements OnInit {
         }
       })
     );
+  }
+
+  /**
+   * recieve category from child components for navigation
+   * @param category
+   */
+  public redirectToProduct(category: Categories): void {
+    this.route.navigate([`/${category.slug}`]);
+
   }
 }
