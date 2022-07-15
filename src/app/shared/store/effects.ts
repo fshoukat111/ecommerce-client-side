@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { map, catchError, switchMap, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import * as categoryAction from '@apps/store/actions';
+import * as categoryAction from '@apps/shared/store/actions';
 import { CategoriesService } from '@apps/core/services/categories/categories.service';
 import { Categories } from '@apps/shared/models';
 

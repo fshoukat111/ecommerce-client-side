@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { LoadCategoryList } from './store/actions';
-import { getCategoryListSelector } from './store/selectors';
 import { Categories } from './shared/models';
+import { LoadCategoryList, getCategoryListSelector } from '@apps/shared/store';
 
 @Component({
   selector: 'app-root',
@@ -47,6 +46,5 @@ export class AppComponent {
    */
   public redirectToProduct(category: Categories): void {
     this.route.navigate([`/${category.slug}`]);
-
   }
 }

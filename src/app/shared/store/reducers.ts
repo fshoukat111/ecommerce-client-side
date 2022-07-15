@@ -1,5 +1,5 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import * as categoryAction from '@apps/store/actions';
+import * as categoryAction from '@apps/shared/store/actions';
 import { ICategoryState, initialCategoryState } from './state';
 
 const createCategorySectionReducer = createReducer(initialCategoryState,
