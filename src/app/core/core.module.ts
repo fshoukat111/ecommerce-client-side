@@ -4,8 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { CategorySectionEffects } from '@apps/modules/categories/store/effects';
-import { categorySectionReducer } from '@apps/modules/categories/store/reducers';
+import { CategorySectionEffects } from '@apps/store/effects';
+import { categorySectionReducer } from '@apps/store/reducers';
 
 
 
