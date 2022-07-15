@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TabViewModule} from 'primeng/tabview';
 import {CardModule} from 'primeng/card';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
@@ -13,11 +12,11 @@ import {PaginatorModule} from 'primeng/paginator';
 import {OrderListModule} from 'primeng/orderlist';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {AccordionModule} from 'primeng/accordion';
+import {ButtonModule} from 'primeng/button';
 
 
 const modules = [
   CommonModule,
-  BrowserAnimationsModule,
   TabViewModule,
   CardModule,
   BreadcrumbModule,
@@ -29,6 +28,7 @@ const modules = [
   OrderListModule,
   DynamicDialogModule,
   AccordionModule,
+  ButtonModule,
 ]
 
 @NgModule({
