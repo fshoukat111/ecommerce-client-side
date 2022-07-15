@@ -6,7 +6,11 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('@apps/modules/categories/categories.module').then(m => m.CategoriesModule),
   },
-  { path: '',   redirectTo: ``, pathMatch: 'full' },
+  {
+    path: '',
+    loadChildren: () => import('@apps/modules/products/products.module').then(m => m.ProductsModule),
+  },
+  { path: '',   redirectTo: `men`, pathMatch: 'full' },
 ];
 
 @NgModule({
