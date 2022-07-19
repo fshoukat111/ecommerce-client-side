@@ -11,6 +11,6 @@ export class ProductsService {
   constructor(private requestService: RequestService) { }
 
   getProductsList(categorySlug: string, page: number): Observable<any[]> {
-    return this.requestService.get(`${ApiUrl.baseUrl}/${ApiUrl.products}/${categorySlug}/${page}`)
+    return this.requestService.get(`${ApiUrl.baseUrl}/${ApiUrl.products}/${categorySlug}/?page=${page}`)
   }
 }
