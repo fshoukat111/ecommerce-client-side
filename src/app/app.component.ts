@@ -45,6 +45,6 @@ export class AppComponent {
    * @param category
    */
   public redirectToProduct(category: Categories): void {
-    this.route.navigate([`/${category.slug}`]);
+    this.route.navigate([`products/${category.slug}`]);
   }
 }
