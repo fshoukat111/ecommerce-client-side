@@ -5,6 +5,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { CategorySectionEffects, categorySectionReducer } from '@apps/shared/store';
+import { ProductSectionEffects } from '@apps/modules/products/store/effects';
+import { productSectionReducer } from '@apps/modules/products/store/reducers';
 
 @NgModule({
   declarations: [],
@@ -13,6 +15,7 @@ import { CategorySectionEffects, categorySectionReducer } from '@apps/shared/sto
     HttpClientModule,
     StoreModule.forRoot({
       category: categorySectionReducer,
+      product:productSectionReducer
     },
     {
       runtimeChecks: {
@@ -24,6 +27,7 @@ import { CategorySectionEffects, categorySectionReducer } from '@apps/shared/sto
     ),
     EffectsModule.forRoot([
       CategorySectionEffects,
+      ProductSectionEffects
     ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
