@@ -1,1 +1,19 @@
-<p>products-by-category works!</p>
+<div *ngIf="productList.length">
+    <div *ngFor="let product of productList">
+        <p-card header="{{product?.name}}" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
+            <ng-template pTemplate="header">
+                <!-- <img alt="Card" src="assets/showcase/images/usercard.png"> -->
+            </ng-template>
+            <p>{{product?.description}}</p>
+            <ng-template pTemplate="footer">
+                <p-button label="Detail"></p-button>
+            </ng-template>
+        </p-card>
+    </div>
+</div>
+<div *ngIf="productList.length===0">
+    <b>
+        <p>Category is Empty</p>
+
+    </b>
+</div>
