@@ -1,19 +1,27 @@
-<div *ngIf="productList.length">
-    <div *ngFor="let product of productList">
-        <p-card header="{{product?.name}}" subheader="" [style]="{width: '360px'}" styleClass="p-card-shadow">
-            <ng-template pTemplate="header">
-                <!-- <img alt="Card" src="assets/showcase/images/usercard.png"> -->
-            </ng-template>
-            <p>{{product?.description}}</p>
-            <ng-template pTemplate="footer">
-                <p-button label="Detail"></p-button>
-            </ng-template>
-        </p-card>
+<div class="products-page">
+
+    <div class="card" *ngIf="productList.length">
+        <div *ngFor="let product of productList | paginate: config">
+            <p-card (click)="routeToProductDetailPage(product)" header="{{ (product.name.length > 30) ? (product.name|
+                    slice:0:120)+'..':(product.name) }}" subheader="" [style]="{width: '360px'}"
+                styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <img alt="Card" src="https://res.cloudinary.com/dguivhovs/{{product.product_image}}">
+                </ng-template>
+                <p-rating [cancel]="false"></p-rating>
+                <p>${{product?.amount}}</p>
+                <ng-template pTemplate="footer">
+                    <p-button label="Detail"></p-button>
+                </ng-template>
+            </p-card>
+        </div>
+    </div>
+    <div class="pagination">
+        <pagination-controls class="pagination" (pageChange)="pageChange($event)"></pagination-controls>
     </div>
 </div>
 <div *ngIf="productList.length===0">
     <b>
         <p>Category is Empty</p>
-
     </b>
 </div>

@@ -1,0 +1,1 @@
+export * from "@apps/modules/products/pages/product-detail/product-detail.component";

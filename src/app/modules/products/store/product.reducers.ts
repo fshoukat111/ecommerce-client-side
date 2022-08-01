@@ -1,6 +1,6 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import * as productAction from '@apps/modules/products/store/actions';
-import { IProductState, initialProductState } from './state';
+import * as productAction from '@apps/modules/products/store/product.actions';
+import { IProductState, initialProductState } from './product.state';
 
 const createProductSectionReducer = createReducer(initialProductState,
 
@@ -19,8 +19,24 @@ const createProductSectionReducer = createReducer(initialProductState,
   on(productAction.LoadProductListFail, (state, { error }) => ({
     ...state,
     error,
-  }))
+  })),
   
+  //get Category List By Admin Reducers
+  on(productAction.LoadProductBySlug, (state,{categorySlug,productSlug}) => ({
+    ...state,
+    categorySlug,
+    productSlug
+  })),
+
+  on(productAction.LoadProductBySlugSuccess, (state, { productDetail }) => ({
+    ...state,
+    productDetail
+  })),
+
+  on(productAction.LoadProductListFail, (state, { error }) => ({
+    ...state,
+    error,
+  })),
 )
 export function productSectionReducer(state: IProductState  = initialProductState, action: Action) {
     return createProductSectionReducer(state, action);

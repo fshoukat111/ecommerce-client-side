@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Products } from '@apps/shared/models';
 
 @Component({
@@ -9,10 +9,22 @@ import { Products } from '@apps/shared/models';
 export class ProductsByCategoryComponent implements OnInit {
 
   @Input() productList:Products[]=[];
+  @Input() config:any;
+  @Output() pageChanged = new EventEmitter();
+  @Output() routeToProductDetail = new EventEmitter();
+
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  pageChange(page):void{
+    this.pageChanged.emit(page);
+  }
+
+  routeToProductDetailPage(product){
+    this.routeToProductDetail.emit(product);
   }
 
 }

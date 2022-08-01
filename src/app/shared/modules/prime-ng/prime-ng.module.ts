@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import {TabViewModule} from 'primeng/tabview';
 import {CardModule} from 'primeng/card';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
-import {MenuItem} from 'primeng/api';
 import {CarouselModule} from 'primeng/carousel';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import {ToastModule} from 'primeng/toast';
@@ -13,6 +12,7 @@ import {OrderListModule} from 'primeng/orderlist';
 import {DynamicDialogModule} from 'primeng/dynamicdialog';
 import {AccordionModule} from 'primeng/accordion';
 import {ButtonModule} from 'primeng/button';
+import {RatingModule} from 'primeng/rating';
 
 
 const modules = [
@@ -29,6 +29,7 @@ const modules = [
   DynamicDialogModule,
   AccordionModule,
   ButtonModule,
+  RatingModule
 ]
 
 @NgModule({
