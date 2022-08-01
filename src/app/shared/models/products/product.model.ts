@@ -10,5 +10,6 @@ export class Products {
     stock?:number;
     isAvailable?:false;
     createdAt?:string;
+    product_image?:string;
     updatedAt?:string;
 }

@@ -1,4 +1,5 @@
 <div class="card-list">
-    <app-products-by-category class="card" [productList]="productList"></app-products-by-category>
+    <app-products-by-category class="card" [productList]="productList" (pageChanged)="pageChanged($event)"
+        [config]="config" (routeToProductDetail)="routeToProductDetail($event)"></app-products-by-category>
 
 </div>

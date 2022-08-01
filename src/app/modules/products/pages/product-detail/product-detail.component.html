@@ -1,0 +1,15 @@
+<p-breadcrumb [model]="items"></p-breadcrumb>
+
+<div class="row">
+    <div class="column" style="background-color:#aaa;">
+      <h2>Column 1</h2>
+      <p>Some text..</p>
+    </div>
+    <div class="column">
+      <h5>{{categoryName}}</h5>
+      <p>{{productDetail.name}}</p>
+      <p>{{productDetail.description}}</p>
+    </div>
+
+  <button (click)="dispatchAddProductAction(cart)">Add to Cart</button>
+  </div>
